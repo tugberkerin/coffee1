@@ -5,8 +5,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF997A5B),
-      appBar: AppBar(
-        title: Text('Ana Ekran'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(
+            100.0), // İstediğiniz yüksekliği buradan ayarlayabilirsiniz
+        child: AppBar(
+          title: Text('Ana Ekran'),
+        ),
       ),
       body: Container(
         child: Center(
