@@ -44,7 +44,7 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
             child: Image.asset(
               widget.kahveTarifi.resimPath,
               width: double.infinity,
-              height: 200,
+              height: 350,
               fit: BoxFit.cover,
             ),
           ),
