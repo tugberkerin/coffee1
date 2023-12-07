@@ -28,7 +28,8 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
           IconButton(
             icon: Icon(
               favorited ? Icons.favorite : Icons.favorite_border,
-              color: favorited ? Colors.red : null,
+              color:
+                  favorited ? const Color.fromARGB(255, 194, 155, 108) : null,
             ),
             onPressed: () {
               _toggleFavorite();
@@ -36,53 +37,59 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Üst kısım: Resim
-          ClipRRect(
-            child: Image.asset(
-              widget.kahveTarifi.resimPath,
-              width: double.infinity,
-              height: 350,
-              fit: BoxFit.cover,
-            ),
-          ),
-          SizedBox(height: 16.0),
-          // Orta kısım: Başlık
-          Text(
-            widget.kahveTarifi.tarifAdi,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 16.0),
-          // Alt kısım: Açıklama
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              widget.kahveTarifi.tarifIcerik,
-              style: TextStyle(fontSize: 18),
-              textAlign: TextAlign.justify,
-            ),
-          ),
-          SizedBox(height: 16.0),
-          // Alt kısım: URL Bağlantısı
-          ButtonBar(
-            alignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  _launchURL(widget.kahveTarifi.playlistUrl);
-                },
-                style: ElevatedButton.styleFrom(
-                  primary:
-                      const Color.fromARGB(255, 121, 85, 72), // Arka plan rengi
+      body: ListView.builder(
+        itemCount: 1,
+        itemBuilder: (context, index) {
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Üst kısım: Resim
+                ClipRRect(
+                  child: Image.asset(
+                    widget.kahveTarifi.resimPath,
+                    width: double.infinity,
+                    height: 350,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                child: Text('Tarifin Playlist\'ini Dinle'),
-              ),
-            ],
-          ),
-        ],
+                SizedBox(height: 16.0),
+                // Orta kısım: Başlık
+                Text(
+                  widget.kahveTarifi.tarifAdi,
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 16.0),
+                // Alt kısım: Açıklama
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    widget.kahveTarifi.tarifIcerik,
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.justify,
+                  ),
+                ),
+                SizedBox(height: 16.0),
+                // Alt kısım: URL Bağlantısı
+                ButtonBar(
+                  alignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        _launchURL(widget.kahveTarifi.playlistUrl);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: const Color.fromARGB(255, 121, 85, 72),
+                      ),
+                      child: Text('Tarifin Playlist\'ini Dinle'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
