@@ -22,7 +22,7 @@ class Secim extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("lib/images/soguk.jpeg"),
+                    image: AssetImage("lib/images/soguk.jpg"),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -41,7 +41,7 @@ class Secim extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("lib/images/sicak.jpeg"),
+                    image: AssetImage("lib/images/sicak.jpg"),
                     fit: BoxFit.fill,
                   ),
                 ),

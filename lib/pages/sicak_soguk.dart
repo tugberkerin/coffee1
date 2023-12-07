@@ -24,18 +24,22 @@ class Sicak extends StatelessWidget {
         'Sıcak Tarif 2 İçeriği',
         'lib/images/cappucino.jpg',
         'https://www.example.com/cappucino-playlist'),
-    KahveTarifi(
-        'Caramel MOCHA',
-        'Sıcak Tarif 1 İçeriği',
-        'lib/images/caramel-mocha.jpg',
-        'https://www.example.com/caramel-mocha-playlist'),
     KahveTarifi('Espresso', 'Sıcak Tarif 1 İçeriği', 'lib/images/espreesso.jpg',
         'https://www.example.com/espresso-playlist'),
     KahveTarifi(
         'AMERICANO',
-        'Sıcak Tarif 1 İçeriği',
+        'Sıcak Tarif 3 İçeriği',
         'lib/images/americano.jpg',
         'https://www.example.com/americano-playlist'),
+    KahveTarifi('Mocha', 'Sıcak Tarif 4 İçeriği', 'lib/images/mocha.jpg',
+        'https://www.example.com/soguk-tarif-1-playlist'),
+    KahveTarifi(
+        'Filtre Kahve',
+        'Sıcak Tarif 5 İçeriği',
+        'lib/images/filtre-kahve.jpg',
+        'https://www.example.com/soguk-tarif-1-playlist'),
+    KahveTarifi('Latte', 'Sıcak Tarif 6 İçeriği', 'lib/images/latte.jpg',
+        'https://www.example.com/soguk-tarif-1-playlist'),
     // Diğer sicak tarifler...
   ];
 
@@ -44,10 +48,10 @@ class Sicak extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 71, 114, 134),
+      backgroundColor: Color.fromARGB(255, 109, 66, 49),
       appBar: AppBar(
         title: const Text('SICAK KAHVE'),
-        backgroundColor: Color.fromARGB(255, 155, 190, 200),
+        backgroundColor: Color.fromARGB(255, 109, 66, 49),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.coffee_maker_outlined),
@@ -90,7 +94,7 @@ class Sicak extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 173, 216, 230),
+                color: Color.fromARGB(255, 194, 155, 108),
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Column(
@@ -138,13 +142,23 @@ class Sicak extends StatelessWidget {
 
 class Soguk extends StatelessWidget {
   final List<KahveTarifi> sogukTarifler = [
-    KahveTarifi('Mocha', 'Soğuk Tarif 1 İçeriği', 'lib/images/mocha.jpg',
-        'https://www.example.com/soguk-tarif-1-playlist'),
     KahveTarifi(
-        'Soğuk Tarif 2',
-        'Soğuk Tarif 2 İçeriği',
-        'lib/images/soguk.jpg',
+        'Ice Mocha',
+        'Soğuk Tarif 1 İçeriği',
+        'lib/images/ice-mocha.jpg',
         'https://www.example.com/soguk-tarif-2-playlist'),
+    KahveTarifi(
+        'Caramel Mocha',
+        'Soğuk Tarif 2 İçeriği',
+        'lib/images/caramel-mocha.jpg',
+        'https://www.example.com/caramel-mocha-playlist'),
+    KahveTarifi(
+        'Ice Americano',
+        'Soğuk Tarif 3 İçeriği',
+        'lib/images/iceamericano.jpg',
+        'https://www.example.com/soguk-tarif-1-playlist'),
+    KahveTarifi('Ice Latte', 'Soğuk Tarif 4 İçeriği', 'lib/images/icelatte.jpg',
+        'https://www.example.com/soguk-tarif-1-playlist'),
     // Diğer soğuk tarifler...
   ];
 
@@ -153,10 +167,10 @@ class Soguk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 71, 114, 134),
+      backgroundColor: Color.fromARGB(255, 109, 66, 49),
       appBar: AppBar(
         title: Text('SOĞUK KAHVE'),
-        backgroundColor: const Color.fromARGB(255, 155, 190, 200),
+        backgroundColor: Color.fromARGB(255, 109, 66, 49),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.coffee_maker_outlined),
@@ -199,7 +213,7 @@ class Soguk extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 173, 216, 230),
+                color: Color.fromARGB(255, 194, 155, 108),
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Column(
