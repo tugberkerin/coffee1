@@ -11,40 +11,38 @@ class Secim extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Expanded(
-            child: GestureDetector(
+            child: InkWell(
+              highlightColor:
+                  Color.fromARGB(206, 255, 255, 255).withOpacity(0.3),
+              splashColor: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => Soguk()),
                 );
               },
-              child: Container(
+              child: Ink.image(
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("lib/images/soguk.jpg"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
+                image: AssetImage("lib/images/soguk.jpg"),
+                fit: BoxFit.fill,
               ),
             ),
           ),
           Expanded(
-            child: GestureDetector(
+            child: InkWell(
+              highlightColor:
+                  Color.fromARGB(206, 255, 255, 255).withOpacity(0.3),
+              splashColor: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => Sicak()),
                 );
               },
-              child: Container(
+              child: Ink.image(
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("lib/images/sicak.jpg"),
-                    fit: BoxFit.fill,
-                  ),
-                ),
+                image: AssetImage("lib/images/sicak.jpg"),
+                fit: BoxFit.fill,
               ),
             ),
           ),
