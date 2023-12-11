@@ -17,7 +17,7 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
 
   @override
   Widget build(BuildContext context) {
-    bool favorited = FavoriTarifler.favoriMi(widget.kahveTarifi);
+    favorited = FavoriTarifler.favoriMi(widget.kahveTarifi);
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 194, 155, 108),

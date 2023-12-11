@@ -81,7 +81,23 @@ class Sicak extends StatelessWidget {
         ),
         itemCount: sicakTarifler.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
+          void _showContextMenu(context) {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: Text(
+                  "my text",
+                  style: TextStyle(color: Colors.white),
+                ),
+                backgroundColor:
+                    const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+              ),
+            );
+          }
+
+          return InkWell(
+            highlightColor: Color.fromARGB(206, 255, 255, 255).withOpacity(0.3),
+            splashColor: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
             onTap: () {
               Navigator.push(
                 context,
@@ -91,12 +107,13 @@ class Sicak extends StatelessWidget {
                 ),
               );
             },
-            child: Container(
+            onLongPress: () {
+              _showContextMenu(context);
+            },
+            child: Ink.image(
+              image: AssetImage(sicakTarifler[index].resimPath),
+              fit: BoxFit.contain,
               padding: EdgeInsets.all(8.0),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 194, 155, 108),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -200,7 +217,23 @@ class Soguk extends StatelessWidget {
         ),
         itemCount: sogukTarifler.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
+          void _showContextMenu(context) {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: Text(
+                  "my text",
+                  style: TextStyle(color: Colors.white),
+                ),
+                backgroundColor:
+                    const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+              ),
+            );
+          }
+
+          return InkWell(
+            highlightColor: Color.fromARGB(206, 255, 255, 255).withOpacity(0.3),
+            splashColor: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
             onTap: () {
               Navigator.push(
                 context,
@@ -210,12 +243,13 @@ class Soguk extends StatelessWidget {
                 ),
               );
             },
-            child: Container(
+            onLongPress: () {
+              _showContextMenu(context);
+            },
+            child: Ink.image(
+              image: AssetImage(sogukTarifler[index].resimPath),
+              fit: BoxFit.contain,
               padding: EdgeInsets.all(8.0),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 194, 155, 108),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
