@@ -64,11 +64,6 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 16.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: _buildTatliLikIcons(),
-                ),
-                SizedBox(height: 16.0),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
@@ -97,13 +92,6 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
           );
         },
       ),
-    );
-  }
-
-  List<Widget> _buildTatliLikIcons() {
-    return List.generate(
-      10,
-      (index) => Icon(Icons.star, color: Colors.amber),
     );
   }
 
