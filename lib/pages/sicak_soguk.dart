@@ -16,21 +16,21 @@ class KahveTarifi {
 class Sicak extends StatelessWidget {
   final List<KahveTarifi> sicakTarifler = [
     KahveTarifi(
-        'FLAT WHİTE',
+        'Flat White',
         'Sıcak Tarif 1 İçeriği',
         'lib/images/flat-white.jpg',
         'https://open.spotify.com/playlist/7orEC80jK5fiPYnV499Pgf?si=76267fbcbe1f42a9',
         1),
     KahveTarifi(
-        'CAPPUCINO',
+        'Cappucino',
         'Sıcak Tarif 2 İçeriği',
         'lib/images/cappucino.jpg',
         'https://www.example.com/cappucino-playlist',
         1),
-    KahveTarifi('Espresso', 'Sıcak Tarif 1 İçeriği', 'lib/images/espreesso.jpg',
+    KahveTarifi('Espresso', 'Sıcak Tarif 1 İçeriği', 'lib/images/espresso.jpg',
         'https://www.example.com/espresso-playlist', 1),
     KahveTarifi(
-        'AMERICANO',
+        'Americano',
         'Sıcak Tarif 3 İçeriği',
         'lib/images/americano.jpg',
         'https://www.example.com/americano-playlist',
@@ -45,7 +45,11 @@ class Sicak extends StatelessWidget {
         1),
     KahveTarifi('Latte', 'Sıcak Tarif 6 İçeriği', 'lib/images/latte.jpg',
         'https://www.example.com/soguk-tarif-1-playlist', 1),
-    // Diğer sicak tarifler...
+    KahveTarifi('Caramel Mocha', 'İçerik ', 'lib/images/caramel-mocha.jpg',
+        'https://www.example.com/soguk-tarif-1-playlist', 2),
+    KahveTarifi(
+        'Türk Kahvesi', 'icerik', 'lib/images/turk-kahvesi.jpg', 'url', 3),
+    KahveTarifi('Pumpkin Spice ', 'icerik', 'lib/images/pumpkin.jpg', 'url', 3)
   ];
 
   Sicak({Key? key}) : super(key: key);
@@ -127,7 +131,9 @@ class Sicak extends StatelessWidget {
                   SizedBox(height: 8.0),
                   Text(
                     sicakTarifler[index].tarifAdi,
-                    style: TextStyle(fontSize: 15, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Color.fromARGB(255, 255, 255, 255)),
                   ),
                 ],
               ),
@@ -344,7 +350,8 @@ Hazırlanışı:
                   SizedBox(height: 8.0),
                   Text(
                     sogukTarifler[index].tarifAdi,
-                    style: TextStyle(fontSize: 15, color: Colors.white),
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
@@ -366,10 +373,13 @@ Hazırlanışı:
             return AlertDialog(
               title: Column(
                 children: [
-                  Image.asset(
-                    kahveResimPath,
-                    height: 200,
-                    width: 200,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(15.0),
+                    child: Image.asset(
+                      kahveResimPath,
+                      height: 200,
+                      width: 200,
+                    ),
                   ),
                   SizedBox(height: 16.0),
                   Text(
@@ -381,7 +391,7 @@ Hazırlanışı:
                     height: 20.0,
                     decoration: BoxDecoration(
                       color: Color.fromARGB(255, 33, 35, 37),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: Row(
                       children: [
