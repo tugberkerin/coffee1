@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 
 class KahveTarifi {
   final String tarifAdi;
-  final String tarifIcerik;
+  final String tarifMalzemeler;
+  final String tarifHazirlanis;
   final String resimPath;
   final String playlistUrl;
   final double tatlikDerecesi;
 
-  KahveTarifi(this.tarifAdi, this.tarifIcerik, this.resimPath, this.playlistUrl,
-      this.tatlikDerecesi);
+  KahveTarifi(this.tarifAdi, this.tarifMalzemeler, this.tarifHazirlanis,
+      this.resimPath, this.playlistUrl, this.tatlikDerecesi);
 }
 
 class Sicak extends StatelessWidget {
@@ -18,38 +19,48 @@ class Sicak extends StatelessWidget {
     KahveTarifi(
         'Flat White',
         'Sıcak Tarif 1 İçeriği',
+        "",
         'lib/images/flat-white.jpg',
         'https://open.spotify.com/playlist/7orEC80jK5fiPYnV499Pgf?si=76267fbcbe1f42a9',
         1),
     KahveTarifi(
         'Cappucino',
         'Sıcak Tarif 2 İçeriği',
+        "",
         'lib/images/cappucino.jpg',
         'https://www.example.com/cappucino-playlist',
         1),
-    KahveTarifi('Espresso', 'Sıcak Tarif 1 İçeriği', 'lib/images/espresso.jpg',
-        'https://www.example.com/espresso-playlist', 1),
+    KahveTarifi(
+        'Espresso',
+        'Sıcak Tarif 1 İçeriği',
+        "",
+        'lib/images/espresso.jpg',
+        'https://www.example.com/espresso-playlist',
+        1),
     KahveTarifi(
         'Americano',
         'Sıcak Tarif 3 İçeriği',
+        "",
         'lib/images/americano.jpg',
         'https://www.example.com/americano-playlist',
         1),
-    KahveTarifi('Mocha', 'Sıcak Tarif 4 İçeriği', 'lib/images/mocha.jpg',
+    KahveTarifi('Mocha', 'Sıcak Tarif 4 İçeriği', "", 'lib/images/mocha.jpg',
         'https://www.example.com/soguk-tarif-1-playlist', 1),
     KahveTarifi(
         'Filtre Kahve',
         'Sıcak Tarif 5 İçeriği',
+        "",
         'lib/images/filtre-kahve.jpg',
         'https://www.example.com/soguk-tarif-1-playlist',
         1),
-    KahveTarifi('Latte', 'Sıcak Tarif 6 İçeriği', 'lib/images/latte.jpg',
+    KahveTarifi('Latte', 'Sıcak Tarif 6 İçeriği', "", 'lib/images/latte.jpg',
         'https://www.example.com/soguk-tarif-1-playlist', 1),
-    KahveTarifi('Caramel Mocha', 'İçerik ', 'lib/images/caramel-mocha.jpg',
+    KahveTarifi('Caramel Mocha', 'İçerik ', "", 'lib/images/caramel-mocha.jpg',
         'https://www.example.com/soguk-tarif-1-playlist', 2),
     KahveTarifi(
-        'Türk Kahvesi', 'icerik', 'lib/images/turk-kahvesi.jpg', 'url', 3),
-    KahveTarifi('Pumpkin Spice ', 'icerik', 'lib/images/pumpkin.jpg', 'url', 3)
+        'Türk Kahvesi', 'icerik', "", 'lib/images/turk-kahvesi.jpg', 'url', 3),
+    KahveTarifi(
+        'Pumpkin Spice ', 'icerik', "", 'lib/images/pumpkin.jpg', 'url', 3)
   ];
 
   Sicak({Key? key}) : super(key: key);
@@ -69,9 +80,15 @@ class Sicak extends StatelessWidget {
               final randomIndex = random.nextInt(sicakTarifler.length);
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) =>
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) =>
                       KahveTarifiSayfasi(sicakTarifler[randomIndex]),
+                  transitionsBuilder: (_, animation, __, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
                 ),
               );
             },
@@ -91,9 +108,15 @@ class Sicak extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) =>
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) =>
                       KahveTarifiSayfasi(sicakTarifler[index]),
+                  transitionsBuilder: (_, animation, __, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
                 ),
               );
             },
@@ -224,48 +247,65 @@ Hazırlanışı:
 3.Bardağınızın kalan kısmını buzla doldurun.
 
 ''',
+        "",
         'lib/images/iceamericano.jpg',
         'https://www.example.com/soguk-tarif-2-playlist',
         1),
-    KahveTarifi('Ice Latte', 'Ice Latte İçeriği', 'lib/images/icelatte.jpg',
+    KahveTarifi('Ice Latte', 'Ice Latte İçeriği', "", 'lib/images/icelatte.jpg',
         'https://www.example.com/soguk-tarif-2-playlist', 1),
-    KahveTarifi('Ice Mocha', 'Ice Mocha İçeriği', 'lib/images/ice-mocha.jpg',
-        'https://www.example.com/soguk-tarif-2-playlist', 1),
+    KahveTarifi(
+        'Ice Mocha',
+        'Ice Mocha İçeriği',
+        "",
+        'lib/images/ice-mocha.jpg',
+        'https://www.example.com/soguk-tarif-2-playlist',
+        1),
     KahveTarifi(
         'Ice Caramel Macchiato',
         'Ice Caramel Macchiato',
+        "",
         'lib/images/iced-caramel-mac.jpg',
         'https://www.example.com/soguk-tarif-2-playlist',
         1),
     KahveTarifi(
         'Ice Caramel Latte',
         'Ice Caramel Latte',
+        "",
         'lib/images/iced-caramel-latte.jpg',
         'https://www.example.com/soguk-tarif-2-playlist',
         1),
     KahveTarifi(
         'Iced White Chocolate Mocha',
         'Iced White Chocolate Mocha',
+        "",
         'lib/images/iced-white-c-mocha.jpg',
         'https://www.example.com/soguk-tarif-2-playlist',
         1),
     KahveTarifi(
         'Naneli Espresso',
         'Naneli espresso',
+        "",
         'lib/images/naneli-espresso.jpg',
         'https://www.example.com/soguk-tarif-2-playlist',
         1),
     KahveTarifi(
         'Tarçınlı Soğuk Kahve',
         'Tarçınlı Soğuk Kahve',
+        "",
         'lib/images/Tarcınlı.jpg',
         'https://www.example.com/soguk-tarif-2-playlist',
         1),
-    KahveTarifi('Vietnam Kahvesi', 'Vietnam Kahvesi', 'lib/images/vietnam.jpg',
-        'https://www.example.com/soguk-tarif-2-playlist', 1),
+    KahveTarifi(
+        'Vietnam Kahvesi',
+        'Vietnam Kahvesi',
+        "",
+        'lib/images/vietnam.jpg',
+        'https://www.example.com/soguk-tarif-2-playlist',
+        1),
     KahveTarifi(
         'Vanilla Cold Brew',
         'Vanilla Cold Brew',
+        "",
         'lib/images/vanilla-cold-brew.jpg',
         'https://www.example.com/soguk-tarif-2-playlist',
         1),
@@ -288,9 +328,15 @@ Hazırlanışı:
               final randomIndex = random.nextInt(sogukTarifler.length);
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) =>
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) =>
                       KahveTarifiSayfasi(sogukTarifler[randomIndex]),
+                  transitionsBuilder: (_, animation, __, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
                 ),
               );
             },
@@ -310,9 +356,15 @@ Hazırlanışı:
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) =>
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) =>
                       KahveTarifiSayfasi(sogukTarifler[index]),
+                  transitionsBuilder: (_, animation, __, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
                 ),
               );
             },

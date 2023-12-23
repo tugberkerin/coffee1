@@ -18,7 +18,15 @@ class Secim extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (_) => Soguk()),
+                  PageRouteBuilder(
+                    pageBuilder: (_, __, ___) => Soguk(),
+                    transitionsBuilder: (_, animation, __, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
                 );
               },
               child: Ink.image(
@@ -36,7 +44,15 @@ class Secim extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (_) => Sicak()),
+                  PageRouteBuilder(
+                    pageBuilder: (_, __, ___) => Sicak(),
+                    transitionsBuilder: (_, animation, __, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
                 );
               },
               child: Ink.image(

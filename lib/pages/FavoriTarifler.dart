@@ -18,4 +18,8 @@ class FavoriTarifler {
   static void cikar(KahveTarifi tarif) {
     _favoriTarifler.remove(tarif);
   }
+
+  static List<KahveTarifi> tumTarifleriGetir() {
+    return favoriTarifler;
+  }
 }

@@ -64,13 +64,48 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 16.0),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    widget.kahveTarifi.tarifIcerik,
-                    style: TextStyle(fontSize: 18),
-                    textAlign: TextAlign.justify,
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Text(
+                        'Malzemeler',
+                        style: TextStyle(
+                            fontSize: 22, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        widget.kahveTarifi.tarifMalzemeler,
+                        style: TextStyle(fontSize: 18),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 16.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Text(
+                        'Hazırlanış',
+                        style: TextStyle(
+                            fontSize: 22, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        widget.kahveTarifi.tarifHazirlanis,
+                        style: TextStyle(fontSize: 18),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 16.0),
                 ButtonBar(
