@@ -27,7 +27,13 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
       backgroundColor: const Color.fromARGB(255, 194, 155, 108),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 109, 66, 49),
-        title: Text(widget.kahveTarifi.tarifAdi),
+        title: Center(child: Text(widget.kahveTarifi.tarifAdi)),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            Navigator.pop(context); // Geri dönüş işlemi
+          },
+        ),
         actions: [
           IconButton(
             icon: Icon(

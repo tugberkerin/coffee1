@@ -3,6 +3,8 @@ import 'package:coffee/pages/sicak_soguk.dart';
 class FavoriTarifler {
   static List<KahveTarifi> _favoriTarifler = [];
 
+  FavoriTarifler(List<KahveTarifi> favoriTarifler);
+
   static List<KahveTarifi> get favoriTarifler => _favoriTarifler;
 
   static bool favoriMi(KahveTarifi tarif) {

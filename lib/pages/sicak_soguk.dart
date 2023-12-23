@@ -70,8 +70,14 @@ class Sicak extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 109, 66, 49),
       appBar: AppBar(
-        title: Text('SICAK KAHVE'),
+        title: Center(child: Text('SICAK KAHVE')),
         backgroundColor: const Color.fromARGB(255, 109, 66, 49),
+        leading: IconButton(
+          icon: Icon(Icons.coffee),
+          onPressed: () {
+            Navigator.pop(context); // Geri dönüş işlemi
+          },
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.coffee_maker_outlined),
@@ -94,6 +100,7 @@ class Sicak extends StatelessWidget {
             },
           ),
         ],
+        toolbarHeight: 45.0,
       ),
       body: GridView.builder(
         padding: EdgeInsets.all(8.0),
@@ -318,7 +325,7 @@ Hazırlanışı:
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 109, 66, 49),
       appBar: AppBar(
-        title: Text('SOĞUK KAHVE'),
+        title: Center(child: Text('SOĞUK KAHVE')),
         backgroundColor: const Color.fromARGB(255, 109, 66, 49),
         actions: <Widget>[
           IconButton(
