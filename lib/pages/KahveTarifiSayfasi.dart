@@ -1,5 +1,7 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:coffee/pages/sicak_soguk.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:coffee/pages/FavoriTarifler.dart';
 
@@ -18,6 +20,7 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
   @override
   void initState() {
     super.initState();
+
     favorited = FavoriTarifler.favoriMi(widget.kahveTarifi);
   }
 
@@ -27,12 +30,15 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
       backgroundColor: const Color.fromARGB(255, 194, 155, 108),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 109, 66, 49),
-        title: Center(child: Text(widget.kahveTarifi.tarifAdi)),
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {
-            Navigator.pop(context); // Geri dönüş işlemi
-          },
+        title: TextLiquidFill(
+          text: widget.kahveTarifi.tarifAdi,
+          waveColor: Color.fromARGB(255, 194, 155, 108),
+          loadDuration: Duration(milliseconds: 2250),
+          boxBackgroundColor: Color.fromARGB(255, 109, 66, 49),
+          textStyle: TextStyle(
+            fontSize: 25.0,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           IconButton(
@@ -63,17 +69,17 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(height: 16.0),
-                Text(
-                  widget.kahveTarifi.tarifAdi,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
+                // SizedBox(height: 16.0),
+                // Text(
+                //   widget.kahveTarifi.tarifAdi,
+                //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                //   textAlign: TextAlign.center,
+                // ),
                 SizedBox(height: 16.0),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Center(
+                    const Center(
                       child: Text(
                         'Malzemeler',
                         style: TextStyle(
@@ -95,7 +101,7 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Center(
+                    const Center(
                       child: Text(
                         'Hazırlanış',
                         style: TextStyle(
@@ -114,17 +120,29 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
                   ],
                 ),
                 SizedBox(height: 16.0),
-                ButtonBar(
-                  alignment: MainAxisAlignment.center,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        _launchURL(widget.kahveTarifi.playlistUrl);
+                    InkWell(
+                      onTap: () {
+                        _launchURL(widget.kahveTarifi.youtubeUrl);
                       },
-                      style: ElevatedButton.styleFrom(
-                        primary: const Color.fromARGB(255, 121, 85, 72),
+                      child: const Icon(
+                        FontAwesomeIcons.youtube,
+                        color: Color.fromARGB(255, 202, 44, 44),
+                        size: 50.0,
                       ),
-                      child: Text('Tarifin Playlist\'ini Dinle'),
+                    ),
+                    SizedBox(width: 16.0),
+                    InkWell(
+                      onTap: () {
+                        _launchURL(widget.kahveTarifi.spotifyUrl);
+                      },
+                      child: Icon(
+                        FontAwesomeIcons.spotify,
+                        color: Color.fromARGB(255, 22, 187, 31),
+                        size: 50.0,
+                      ),
                     ),
                   ],
                 ),

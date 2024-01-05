@@ -35,6 +35,16 @@ class _SplashScreenState extends State<SplashScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            Container(
+              margin: EdgeInsets.symmetric(
+                  vertical: 24), // İstediğiniz boşluk ayarlaması
+
+              child: Image.asset(
+                "lib/images/100.jpg",
+                width: 400, // İstediğiniz genişliği ayarlayın
+                height: 60, // İstediğiniz yüksekliği ayarlayın
+              ),
+            ),
           ],
         ),
       ),
