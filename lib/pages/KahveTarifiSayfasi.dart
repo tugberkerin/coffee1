@@ -129,7 +129,7 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
                       },
                       child: const Icon(
                         FontAwesomeIcons.youtube,
-                        color: Color.fromARGB(255, 202, 44, 44),
+                        color: Color.fromARGB(255, 255, 255, 255),
                         size: 50.0,
                       ),
                     ),
@@ -140,7 +140,7 @@ class _KahveTarifiSayfasiState extends State<KahveTarifiSayfasi> {
                       },
                       child: Icon(
                         FontAwesomeIcons.spotify,
-                        color: Color.fromARGB(255, 22, 187, 31),
+                        color: Color.fromARGB(255, 255, 255, 255),
                         size: 50.0,
                       ),
                     ),

@@ -10,9 +10,16 @@ class KahveTarifi {
   final String youtubeUrl;
   final String spotifyUrl;
   final double tatlikDerecesi;
-
-  KahveTarifi(this.tarifAdi, this.tarifMalzemeler, this.tarifHazirlanis,
-      this.resimPath, this.youtubeUrl, this.spotifyUrl, this.tatlikDerecesi);
+  final double zorluk;
+  KahveTarifi(
+      this.tarifAdi,
+      this.tarifMalzemeler,
+      this.tarifHazirlanis,
+      this.resimPath,
+      this.youtubeUrl,
+      this.spotifyUrl,
+      this.tatlikDerecesi,
+      this.zorluk);
 }
 
 class Sicak extends StatelessWidget {
@@ -29,9 +36,10 @@ class Sicak extends StatelessWidget {
 6. Kaynamaya başlamadan önce kısık ateşten alarak üst tabakada kabaran kahve köpüğünü fincanlara eşit miktarda pay edin.
 7. Cezvede kalan kahveyi bir taşım daha kaynatın ve sonra fincanlara paylaştırın.''',
         'lib/images/turk-kahvesi.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        1),
+        'https://www.youtube.com/watch?v=j6N4Jp-1rGY&list=RDQMtno9vZsSXgQ&start_radio=1',
+        'https://open.spotify.com/playlist/6MXkxjS3Tw2Q0NE8SM9RD6?si=22f0145594e44463',
+        3,
+        3),
     KahveTarifi(
         'Caramel Mocha',
         '''• ¾ fincan kadar önceden demlenmiş taze kahve
@@ -48,9 +56,10 @@ class Sicak extends StatelessWidget {
 5. Tüm malzemeler birbirine iyice karışsın.
 6. En son ise karışımın en üst kısmına şeker, tuz, karamel sosu ve krem şantiyi ilave edin.''',
         'lib/images/caramel-mocha.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        5),
+        'https://www.youtube.com/watch?v=XFpvoFikPfg&list=PLktgTkdJty6vLG-_09iCXCVPdj2JNnzUm',
+        'https://open.spotify.com/playlist/0xdd9vDhR8IN5lri2IHniH?si=f13dead39c1446d0',
+        5,
+        2),
     KahveTarifi(
         'Espresso',
         '''• 2 yemek kaşığı kadar espresso için öğütülmüş kahve
@@ -65,9 +74,10 @@ class Sicak extends StatelessWidget {
 7. Ardından french press’in presini yavaşça aşağıya doğru ittirin.
 8. Kahve bardağınızın içine yavaş yavaş dökün.''',
         'lib/images/espresso.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        1),
+        'https://www.youtube.com/watch?v=BETfV1h-A3M',
+        'https://open.spotify.com/playlist/4AyNsUsvGc9qjf0nBSk80S?si=0c660594fa1a40ab',
+        2,
+        4),
     KahveTarifi(
         'Flat White',
         '''• 1 shot espresso
@@ -75,9 +85,10 @@ class Sicak extends StatelessWidget {
         '''1. Sütü 55-62 °C’de bir süre ısıtın ve kapaklı bir sürahiye boşaltın. Bir köpük tabakası ve pürüzsüz kadifemsi kabarcıklar oluşana kadar sallayın.
 2. Süt köpürürken bir kaşıkla sütün üst kısmındaki mikro kabarcıkları katlayın. Bunun sonucunda içeceğiniz daha yumuşak, kadifemsi bir dokuya sahip olacaktır. İki bileşeni birleştirerek harika Flat White kahveyi servis edin.''',
         'lib/images/flat-white.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        4),
+        'https://www.youtube.com/watch?v=XFpvoFikPfg&list=PLktgTkdJty6vLG-_09iCXCVPdj2JNnzUm',
+        'https://open.spotify.com/playlist/0xdd9vDhR8IN5lri2IHniH?si=e1ff70d7982940a1',
+        4,
+        3),
     KahveTarifi(
         'Latte',
         '''• 20-25 ml espresso
@@ -86,9 +97,10 @@ class Sicak extends StatelessWidget {
 2. Kahve makineniz ile veya başka bir süt köpürtme ekipmanı ile taze sütü ısıtın ve yoğun olmamasına dikkat ederek bir miktar köpürtün.
 3. Espresso üzerine ısıtıp köpürttüğünüz sütü ilave ettikten sonra servis edebilirsiniz.''',
         'lib/images/latte.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        4),
+        'https://www.youtube.com/watch?v=XFpvoFikPfg&list=PLktgTkdJty6vLG-_09iCXCVPdj2JNnzUm',
+        'https://open.spotify.com/playlist/0xdd9vDhR8IN5lri2IHniH?si=e1ff70d7982940a1',
+        4,
+        2),
     KahveTarifi(
         'Mocha',
         '''• 1 shot espresso
@@ -102,9 +114,10 @@ class Sicak extends StatelessWidget {
 4. Bardak dolana kadar kremalı sütü bardağa boşaltın.
 5. Krem şantiyi üzerine sıkın ve çikolata parçacıklarını krem şantinin üzerine serpin.''',
         'lib/images/mocha.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        5),
+        'https://www.youtube.com/watch?v=oWO7Gmx28hU',
+        'https://open.spotify.com/playlist/2ftf17LsdoiJI8QNHWPkld?si=d6ddb63774874540',
+        4,
+        3),
     KahveTarifi(
         'Filtre Kahve',
         '''• 1 Tatlı kaşığı granül kahve
@@ -117,9 +130,10 @@ class Sicak extends StatelessWidget {
 3. Eğer şeker kullanıyorsanız, 1 tatlı kaşığı şeker ekleyin.
 4. Şeker yerine kahvenizde kullanmayı sevdiğiniz aromaları içeren şurupları ekleyin.''',
         'lib/images/filtre-kahve.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        1),
+        'https://www.youtube.com/watch?v=j6N4Jp-1rGY&list=RDQMtno9vZsSXgQ&start_radio=1',
+        'https://open.spotify.com/playlist/6MXkxjS3Tw2Q0NE8SM9RD6?si=c5c6710eee5f4927',
+        2,
+        2),
     KahveTarifi(
         'Americano',
         '''• 2 shots Espresso
@@ -127,9 +141,10 @@ class Sicak extends StatelessWidget {
         '''1. Suyu kaynatın ve kahve bardağınıza dökün.
 2. Demlediğiniz espressoyu bardağa dökün.''',
         'lib/images/americano.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        1),
+        'https://www.youtube.com/watch?v=BETfV1h-A3M',
+        'https://open.spotify.com/playlist/4AyNsUsvGc9qjf0nBSk80S?si=2c4adc17d12241a8',
+        1,
+        2),
     KahveTarifi(
         'Cappucino',
         '''• 1 shot Espresso
@@ -141,8 +156,9 @@ class Sicak extends StatelessWidget {
 4. Sütünüzü köpürtün.
 5. Üzerine tarçın veya çikolata parçacıkları serperek görsel bir şölen yaratabilirsiniz.''',
         'lib/images/cappucino.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
+        'https://www.youtube.com/watch?v=j6N4Jp-1rGY&list=RDQMtno9vZsSXgQ&start_radio=1',
+        'https://open.spotify.com/playlist/6MXkxjS3Tw2Q0NE8SM9RD6?si=b207820908424d2b',
+        3,
         3),
     KahveTarifi(
         'Pumpkin Spice',
@@ -158,8 +174,9 @@ class Sicak extends StatelessWidget {
 5. Hazırladığınız espresso ya da herhangi koyu bir kahveyi hazırladığınız karışıma ekleyin.
 6. Bardaklara aldığınız pumpkin spice latte'nin üzerine bir kaşık krema ekleyip pumpkin spice baharat serpiştirin.''',
         'lib/images/pumpkin.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
+        'https://www.youtube.com/watch?v=oWO7Gmx28hU',
+        'https://open.spotify.com/playlist/2ftf17LsdoiJI8QNHWPkld?si=e3b6e17c00a34d17',
+        4,
         3),
   ];
 
@@ -231,6 +248,7 @@ class Sicak extends StatelessWidget {
               showTatlikDerecesiDialog(
                   context,
                   sicakTarifler[index].tatlikDerecesi,
+                  sicakTarifler[index].zorluk,
                   sicakTarifler[index].resimPath);
             },
             child: Ink.image(
@@ -274,14 +292,15 @@ class Sicak extends StatelessWidget {
     );
   }
 
-  void showTatlikDerecesiDialog(
-      BuildContext context, double tatlikDerecesi, String kahveResimPath) {
+  void showTatlikDerecesiDialog(BuildContext context, double tatlikDerecesi,
+      double zorluk, String kahveResimPath) {
     showDialog(
       context: context,
       builder: (context) {
         return StatefulBuilder(
           builder: (context, setState) {
             double widthFactor = tatlikDerecesi / 5;
+            double widthZorluk = zorluk / 5;
             return AlertDialog(
               title: Column(
                 children: [
@@ -320,6 +339,36 @@ class Sicak extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    "Zorluk : $zorluk",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(height: 16.0),
+                  Container(
+                    height: 20.0,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 33, 35, 37),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: (widthZorluk * 100).toInt(),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 160, 125, 79),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: (100 - widthZorluk * 100).toInt(),
+                          child: Container(),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
               backgroundColor:
@@ -350,9 +399,10 @@ class Soguk extends StatelessWidget {
 2. Hazırladığınız espressoyu ekleyin.
 3. Kalan kısma soğuk su ekleyin.''',
         'lib/images/iceamericano.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        1),
+        'https://www.youtube.com/watch?v=j6N4Jp-1rGY&list=RDQMtno9vZsSXgQ&start_radio=1',
+        'https://open.spotify.com/playlist/6MXkxjS3Tw2Q0NE8SM9RD6?si=2da8522f4e544060',
+        1,
+        2),
     KahveTarifi(
         'Ice Latte',
         '''• 1 shot espresso
@@ -362,9 +412,10 @@ class Soguk extends StatelessWidget {
 2. Bardağınızın yarısını geçecek kadar köpürtülmüş süt ekleyin ve karıştırın.
 3. Bardağınızın kalan kısmını buzla doldurun.''',
         'lib/images/icelatte.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        3),
+        'https://www.youtube.com/watch?v=BETfV1h-A3M',
+        'https://open.spotify.com/playlist/4AyNsUsvGc9qjf0nBSk80S?si=591796de1e1e4b69',
+        3,
+        2),
     KahveTarifi(
         'Ice Mocha',
         '''• Yarım paket toz kakao
@@ -378,9 +429,10 @@ class Soguk extends StatelessWidget {
 4. Buna alternatif olarak hazır çikolata sosu da tercih edilebilir..
 5. Kahveyi daha lezzetli yapmak adına toz tarçın ya da vanilya da kullanılabilir.''',
         'lib/images/ice-mocha.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        5),
+        'https://www.youtube.com/watch?v=oWO7Gmx28hU',
+        'https://open.spotify.com/playlist/2ftf17LsdoiJI8QNHWPkld?si=712372f023224274',
+        4,
+        3),
     KahveTarifi(
         'Ice Caramel Macchiato',
         '''• 2 pompa vanilya şurubu
@@ -394,9 +446,10 @@ class Soguk extends StatelessWidget {
 4. Espressoyu ekleyin.
 5. Bardağınızın üstüne dilediğiniz şekilde karamel sos sıkın.''',
         'lib/images/iced-caramel-mac.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        5),
+        'https://www.youtube.com/watch?v=XFpvoFikPfg&list=PLktgTkdJty6vLG-_09iCXCVPdj2JNnzUm',
+        'https://open.spotify.com/playlist/0xdd9vDhR8IN5lri2IHniH?si=1ccf6529f28d4197',
+        5,
+        2),
     KahveTarifi(
         'Ice Caramel Latte',
         '''• 3 pompa karamel şurubu
@@ -408,9 +461,10 @@ class Soguk extends StatelessWidget {
 3. Hazırladığınız espressoyu ekleyin ve karıştırın.
 4. Bardağınızın kalan kısmına buz ekleyin.''',
         'lib/images/iced-caramel-latte.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        4),
+        'https://www.youtube.com/watch?v=XFpvoFikPfg&list=PLktgTkdJty6vLG-_09iCXCVPdj2JNnzUm',
+        'https://open.spotify.com/playlist/0xdd9vDhR8IN5lri2IHniH?si=1ccf6529f28d4197',
+        4,
+        2),
     KahveTarifi(
         'Iced White Mocha',
         '''• 3 pompa beyaz çikolata sosu
@@ -424,9 +478,10 @@ class Soguk extends StatelessWidget {
 4. Bardağınızın kalan kısmına buz ekleyin.
 5. Bardağınızın üstüne krem şanti sıkın.''',
         'lib/images/iced-white-c-mocha.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        4),
+        'https://www.youtube.com/watch?v=oWO7Gmx28hU',
+        'https://open.spotify.com/playlist/2ftf17LsdoiJI8QNHWPkld?si=960977eef4964f62',
+        4,
+        3),
     KahveTarifi(
         'Mint Espresso',
         '''• 1 shot espresso
@@ -438,8 +493,9 @@ class Soguk extends StatelessWidget {
 3. Shakerda karıştırıdığınız karışımı bardağınıza dökün.
 4. Bardağın kalan kısmını soda ile doldurun.''',
         'lib/images/naneli-espresso.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
+        'https://www.youtube.com/watch?v=BETfV1h-A3M',
+        'https://open.spotify.com/playlist/4AyNsUsvGc9qjf0nBSk80S?si=e99cd0fae30d451a',
+        3,
         2),
     KahveTarifi(
         'Iced Cinnamon',
@@ -456,11 +512,12 @@ class Soguk extends StatelessWidget {
 5. Bardağınızın üstüne dilediğiniz şekilde karamel sos sıkın.
 6. Toz tarçın serpin.''',
         'lib/images/Tarcınlı.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
-        3),
+        'https://www.youtube.com/watch?v=BETfV1h-A3M',
+        'https://open.spotify.com/playlist/6MXkxjS3Tw2Q0NE8SM9RD6?si=d84a744ec6fc49b9',
+        3,
+        2),
     KahveTarifi(
-        'Vietnam Coffe',
+        'Vietnam Coffee',
         '''• Filtre kahve
 •	2 yemek kaşığı yoğunlaştırılmış süt
 •	Taze nane yaprakları
@@ -469,9 +526,10 @@ class Soguk extends StatelessWidget {
 2. Bardağınızın ¾’ünü hazırladığınız filtre kahve ile doldurun.
 3. Yoğunlaştırılmış sütü ekleyin.
 4. Bardağınızın üstüne taze nane yaprakları ekleyin.''',
-        'lib/images/vietnam.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
+        'lib/images/VIETNAM.jpg',
+        'https://www.youtube.com/watch?v=BETfV1h-A3M',
+        'https://open.spotify.com/playlist/4AyNsUsvGc9qjf0nBSk80S?si=0163811b6201454d',
+        2,
         2),
     KahveTarifi(
         'Vanilla Cold Brew',
@@ -484,10 +542,12 @@ class Soguk extends StatelessWidget {
 3. Bardağınızın yarısını geçecek kadar soğuk su ekleyin.
 4. Kalan kısma buzları ekleyin.
 5. Bardağınızın üstüne az bir miktar tatlı krema ekleyin.''',
-        'lib/images/vanilla-cold-brew.jpg',
-        'https://www.youtube.com/',
-        'https://www.spotify.com/',
+        'lib/images/VANILLA-COLD-BREW.jpg',
+        'https://www.youtube.com/watch?v=BETfV1h-A3M',
+        'https://open.spotify.com/playlist/4AyNsUsvGc9qjf0nBSk80S?si=0163811b6201454d',
+        4,
         2),
+    // Diğer soğuk tarifler...
   ];
 
   Soguk({Key? key}) : super(key: key);
@@ -557,6 +617,7 @@ class Soguk extends StatelessWidget {
               showTatlikDerecesiDialog(
                   context,
                   sogukTarifler[index].tatlikDerecesi,
+                  sogukTarifler[index].zorluk,
                   sogukTarifler[index].resimPath);
             },
             child: Ink.image(
@@ -599,24 +660,22 @@ class Soguk extends StatelessWidget {
     );
   }
 
-  void showTatlikDerecesiDialog(
-      BuildContext context, double tatlikDerecesi, String kahveResimPath) {
+  void showTatlikDerecesiDialog(BuildContext context, double tatlikDerecesi,
+      double zorluk, String kahveResimPath) {
     showDialog(
       context: context,
       builder: (context) {
         return StatefulBuilder(
           builder: (context, setState) {
             double widthFactor = tatlikDerecesi / 5;
+            double widthZorluk = zorluk / 5;
             return AlertDialog(
               title: Column(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15.0),
-                    child: Image.asset(
-                      kahveResimPath,
-                      height: 200,
-                      width: 200,
-                    ),
+                  Image.asset(
+                    kahveResimPath,
+                    height: 200,
+                    width: 200,
                   ),
                   SizedBox(height: 16.0),
                   Text(
@@ -628,7 +687,7 @@ class Soguk extends StatelessWidget {
                     height: 20.0,
                     decoration: BoxDecoration(
                       color: Color.fromARGB(255, 33, 35, 37),
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Row(
                       children: [
@@ -643,6 +702,36 @@ class Soguk extends StatelessWidget {
                         ),
                         Expanded(
                           flex: (100 - widthFactor * 100).toInt(),
+                          child: Container(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    "Zorluk : $zorluk",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(height: 16.0),
+                  Container(
+                    height: 20.0,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 33, 35, 37),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: (widthZorluk * 100).toInt(),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 160, 125, 79),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: (100 - widthZorluk * 100).toInt(),
                           child: Container(),
                         ),
                       ],
